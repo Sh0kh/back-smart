@@ -86,7 +86,7 @@ export class UserController {
   }
 
   @ApiOperation({ summary: 'User view by ID' })
-  @Roles('SUPER-ADMIN')
+  @Roles('SUPER-ADMIN', 'ADMIN')
   @UseGuards(RolesGuard)
   @UseGuards(JwtAuthGuard)
   @Get(':id')
@@ -104,7 +104,7 @@ export class UserController {
   }
 
   @ApiOperation({ summary: 'User update by ID' })
-  @Roles('SUPER-ADMIN')
+  @Roles('SUPER-ADMIN', 'ADMIN')
   @UseGuards(RolesGuard)
   @UseGuards(JwtAuthGuard)
   @Put(':id')
